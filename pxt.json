@@ -1,5 +1,5 @@
 {
-    "name": "VDSC",
+    "name": "main_vdsc",
     "description": "",
     "dependencies": {
         "core": "*",
