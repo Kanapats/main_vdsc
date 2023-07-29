@@ -2,7 +2,7 @@ let msg = ""
 let status = 0
 radio.setGroup(38)
 ESP8266_IoT.initWIFI(SerialPin.P8, SerialPin.P12, BaudRate.BaudRate115200)
-ESP8266_IoT.connectWifi("Kanapat", "01234567")
+ESP8266_IoT.connectWifi("AP-TPslow", "")
 if (ESP8266_IoT.wifiState(true)) {
     basic.showIcon(IconNames.Yes)
     basic.pause(2000)
@@ -22,7 +22,7 @@ basic.forever(function () {
     )
     ESP8266_IoT.uploadData()
     msg = serial.readLine()
-    if (msg == "Normal") {
+    if (msg == "Normal" || msg == "Nothing") {
         status = 0
         pins.digitalWritePin(DigitalPin.P1, 1)
         pins.digitalWritePin(DigitalPin.P2, 0)
