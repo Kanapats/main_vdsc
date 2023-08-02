@@ -22,7 +22,7 @@ basic.forever(function () {
     )
     ESP8266_IoT.uploadData()
     msg = serial.readLine()
-    if (msg == "Normal" || msg == "Nothing") {
+    if (msg == "Normal") {
         status = 0
         pins.digitalWritePin(DigitalPin.P1, 1)
         pins.digitalWritePin(DigitalPin.P2, 0)
